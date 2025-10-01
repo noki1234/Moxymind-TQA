@@ -1,3 +1,4 @@
+using System.Net;
 using RestSharp;
 
 namespace ApiTests.Actions;
@@ -20,5 +21,10 @@ public abstract class ActionBase
             Method = method
         };
         return request;
+    }
+    
+    protected void VerifyResponseIsSuccessful(RestResponse response)
+    {
+        Assert.True(response.IsSuccessful, response.ErrorException.Message);
     }
 }

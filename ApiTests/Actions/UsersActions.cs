@@ -14,6 +14,7 @@ public class UsersActions: ActionBase
         var request = CreateRequest("", Method.Get);
         request.AddParameter("page", page);
         var response = await ApiClient.ExecuteAsync<UserListResponse>(request);
+        VerifyResponseIsSuccessful(response.RestResponse);
         return response;
     }
 
@@ -22,6 +23,7 @@ public class UsersActions: ActionBase
         var request = CreateRequest("", Method.Post);
         request.AddJsonBody(user);
         var response = await ApiClient.ExecuteAsync<UserResponse>(request);
+        VerifyResponseIsSuccessful(response.RestResponse);
         return response;    
     }
 } 
