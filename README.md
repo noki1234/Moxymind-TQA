@@ -20,6 +20,7 @@ Test automation framework for API and UI testing using **.NET 8.0 and C#**.
 - **Features** - Human-readable test scenarios (Given/When/Then)
 - **Steps** - C# methods that implement feature steps
 - **Models** - Request/Response object definitions
+- **Actions** - Business logic layer that orchestrates API calls
 - **Executors** - Handle API calls and response processing
 - **Contexts** - Store test data shared across steps
 - **TestData** - External data sources for data-driven tests
@@ -27,8 +28,8 @@ Test automation framework for API and UI testing using **.NET 8.0 and C#**.
 ### 🖥️ SeleniumTests - Structure
 **Key Components:**
 - **Pages** - Page Object classes representing web pages/components
-- **Base** - Common page functionality (waits, clicks, assertions)
-- **Navigation** - Reusable navigation elements (top bar, menus)
+- **Pages/Base** - Common page functionality (waits, clicks, assertions)
+- **Pages/Navigation** - Reusable navigation elements (top bar, menus)
 - **Tests** - Actual test methods and test scenarios
 - **SetupTestBase** - Browser setup, teardown, and test lifecycle management
 - **SeleniumClient** - WebDriver creation and configuration management
