@@ -25,6 +25,10 @@ public abstract class ActionBase
     
     protected void VerifyResponseIsSuccessful(RestResponse response)
     {
-        Assert.True(response.IsSuccessful, response.ErrorException.Message);
+        var errorMessage = response.ErrorException?.Message ?? 
+                           response.ErrorMessage ?? 
+                           $"HTTP {(int)response.StatusCode} {response.StatusCode}: {response.Content}";
+
+        Assert.True(response.IsSuccessful, errorMessage);
     }
 }
